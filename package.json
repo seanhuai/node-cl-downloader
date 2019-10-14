@@ -1,0 +1,36 @@
+{
+  "name": "node-cl-downloader",
+  "version": "0.1.2",
+  "description": "images download tool for t66y.com",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [
+    "download",
+    "image"
+  ],
+  "author": "Sean Huai",
+  "license": "MIT",
+  "bin": {
+    "cl-downloader": "app.js"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "homepage": "https://seanhuai.github.io/node-cl-downloader",
+  "bugs": {
+    "email": "huaiyifan@live.com",
+    "url": "https://github.com/seanhuai/node-cl-downloader/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seanhuai/node-cl-downloader"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "iconv-lite": "^0.4.24",
+    "request": "^2.88.0",
+    "yargs": "^13.1.0"
+  }
+}
