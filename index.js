@@ -1,1 +1,1 @@
-module.exports = require('./downloader');
+module.exports = require('./app');

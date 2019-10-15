@@ -28,10 +28,16 @@
   cl-downloader -i 3666946
 ```
 
-在不使用代理条件下，下载上述内容到特定文件夹，命令如下：
+下载上述内容到特定文件夹，命令如下：
 
 ```shell
-  cl-downloader -i 3666946 -o fsfolder --noProxy
+  cl-downloader -i 3666946 -o fsfolder
+```
+
+同时进行多个（以 4 为例）文件下载上述内容，命令如下：
+
+```shell
+  cl-downloader -i 3666946 -t 4
 ```
 
 ## 选项 Options
@@ -41,7 +47,7 @@
 * `--help` 获取帮助信息；
 * `-i/--tid`  设置需要下载的帖子 id；
 * `-t/--thread`  设置同时下载的工作数，默认为 `4`；
-* `-o/--output`  设置存放下载内容的目录名，默认为 `download`；
+* `-o/--output`  设置存放下载内容的目录名，默认为 `1024`；
 
 在设定选项时需要注意以下几点：
 
