@@ -11,13 +11,10 @@
     "download",
     "image"
   ],
-  "author": "Sean Huai",
+  "author": "seanhuai",
   "license": "MIT",
   "bin": {
     "cl-downloader": "app.js"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
   },
   "homepage": "https://seanhuai.github.io/node-cl-downloader/",
   "bugs": {
