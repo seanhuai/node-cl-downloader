@@ -1,5 +1,11 @@
 # node-cl-downloader
 
+![github license](https://img.shields.io/github/license/seanhuai/node-cl-downloader)
+![gitHub package version](https://img.shields.io/github/package-json/v/seanhuai/node-cl-downloader?color=%23e74c3c)
+![npm version](https://img.shields.io/npm/v/node-cl-downloader)
+![npm downloads](https://img.shields.io/npm/dt/node-cl-downloader?color=%233498db)
+![GitHub stars](https://img.shields.io/github/stars/seanhuai/node-cl-downloader?style=social)
+
 这是一个使用 JavaScript 完成的 T66Y 图片资源下载工具。
 
 ## 安装 Install
