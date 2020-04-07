@@ -95,8 +95,9 @@ class Downloader {
       const html = iconv.decode(new Buffer(body), 'gbk');
       const $ = cheerio.load(html);
       const urls = [];
-      $("[data-src]").each(function(i, elem) {
-        const datasrc = $(this).attr('data-src');
+      $("[ess-data], [data-src]").each(function(i, elem) {
+        let datasrc = $(this).attr('ess-data');
+        if (datasrc === undefined) datasrc = $(this).attr('data-src');
         urls[i] = datasrc.replace('.md', '');
       });
       this.urls = urls;
@@ -122,6 +123,7 @@ class Downloader {
     if(!fs.existsSync(filepath)) {
       // 请求数据并写入
       request.get(url, {encoding: 'binary', rejectUnauthorized:false, timeout: config.timeout }, (err, res, body) => {
+        // if(err) throw Error('下载时出现未知错误，请检查网络设置');
         fs.writeFileSync(filepath, body, 'binary');
         this.events.trigger('downloadFile-success', url);
       })

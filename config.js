@@ -1,7 +1,7 @@
 const config = {
   domain: 'http://t66y.com',
   proxy: {
-    noProxy: false,
+    noProxy: true,
     host: '127.0.0.1',
     post: 1080,
   },
