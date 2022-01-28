@@ -1,6 +1,6 @@
 {
   "name": "node-cl-downloader",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A images download tool for t66y.com",
   "main": "index.js",
   "scripts": {

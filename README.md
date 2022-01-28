@@ -32,21 +32,27 @@
 
 初始代理地址为本地，端口 1080，默认为关闭状态。
 
+查看当前代理状态：
+
+```
+  cl-downloader --proxy
+```
+
 变更代理状态如下操作：
 
 ```shell
   // 如需启用代理
-  cl-donwloader --enableproxy
+  cl-downloader --enableproxy
   
   // 如需停用代理
-  cl-donwloader --disableproxy
+  cl-downloader --disableproxy
   
   // 如需变更代理地址
-  cl-donwloader --proxyhost 127.0.0.1
+  cl-downloader --proxyhost 127.0.0.1
   // 其中 127.0.0.1 为样例数据，需根据实际情况修改
 
   // 如需变更代理服务端口
-  cl-donwloader --proxyport 1080
+  cl-downloader --proxyport 1080
   // 其中 1080 为样例数据，需根据实际情况修改
 ```
 
