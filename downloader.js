@@ -92,7 +92,9 @@ class Downloader {
   getPageContent(url) {
     request.get(this.setPageURL(url), {encoding: null}, (err, res, body) => {
       // 将网页数据按 gbk 编码读取，便于中文提取
-      const html = iconv.decode(new Buffer(body), 'gbk');
+      // const html = iconv.decode(new Buffer(body), 'gbk');
+      const buf = Buffer.from(body);
+      const html = iconv.decode(buf, 'utf8');
       const $ = cheerio.load(html);
       const urls = [];
       $("[ess-data], [data-src]").each(function(i, elem) {
