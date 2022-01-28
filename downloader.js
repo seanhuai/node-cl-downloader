@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 const iconv = require('iconv-lite');
 const Request = require('request');
-const config = require('./config');
+const config = require('./config.json');
 // 网络请求环境初始化
-const request = config.proxy.noProxy? Request.defaults(): Request.defaults({proxy: `http://${config.proxy.host}:${config.proxy.post}`})
+const request = config.proxy.noProxy? Request.defaults(): Request.defaults({proxy: `http://${config.proxy.host}:${config.proxy.port}`})
 const fs = require('fs');
 const cheerio = require('cheerio');
 const { installEventListener } = require('./event');
@@ -23,7 +23,7 @@ class Downloader {
     this.events = installEventListener(e);
     this.eventsInit();
     // 获取页面地址
-    this.getPageURL()
+    this.getPageURL();
   }
 
   eventsInit() {
