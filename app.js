@@ -55,8 +55,16 @@ const argscheck = () => {
     return console.log(config.proxy);
   }
   
-  if(yargs.argv.tid == null) console.warn('请输入有效的id');
-    else new downloader(yargs.argv);
+  if(typeof yargs.argv.tid == 'number') {
+    new downloader(yargs.argv);
+  } else if(typeof yargs.argv.tid == 'string') {
+    var argv = yargs.argv;
+    if(argv.tid.slice(0,4) == 'http' && argv.tid.slice(-4) == 'html') {
+      const newID = argv.tid.split('/')[argv.tid.split('/').length-1].split('.')[0];
+      argv.tid = Number(newID);
+      new downloader(argv);
+    } else console.warn('请输入有效的id');
+  } else console.warn('请输入有效的id');
 }
 
 argscheck();
