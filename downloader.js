@@ -100,7 +100,8 @@ class Downloader {
       $("[ess-data], [data-src]").each(function(i, elem) {
         let datasrc = $(this).attr('ess-data');
         if (datasrc === undefined) datasrc = $(this).attr('data-src');
-        urls[i] = datasrc.replace('.md', '');
+        datasrc = datasrc.replace('.md', '');
+        if (datasrc.slice(0,4) == 'http') urls.push(datasrc);
       });
       this.urls = urls;
       // 读取标题数据
@@ -125,7 +126,7 @@ class Downloader {
     if(!fs.existsSync(filepath)) {
       // 请求数据并写入
       request.get(url, {encoding: 'binary', rejectUnauthorized:false, timeout: config.timeout }, (err, res, body) => {
-        // if(err) throw Error('下载时出现未知错误，请检查网络设置');
+        if(err) throw Error('下载时出现未知错误，请检查网络设置');
         fs.writeFileSync(filepath, body, 'binary');
         this.events.trigger('downloadFile-success', url);
       })
