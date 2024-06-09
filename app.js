@@ -2,7 +2,7 @@
 const fs = require('fs');
 const path = require('path');
 const config = require('./config.json');
-const downloader = require('./downloader');
+const downloader = require('./downloader-ex');
 const yargs = require('yargs').options({
   'tid': {
     alias: 'i'
@@ -23,12 +23,13 @@ const yargs = require('yargs').options({
     type: 'boolean'
   },
   'proxyhost': {},
-  'proxyport': {}
+  'proxyport': {},
+  'imageproxy': {}
 });
 
 const argscheck = () => {
   if(yargs.argv.proxy) {
-    return console.log(config.proxy);
+    return console.log(config.proxy, config.imageProxy);
   }
 
   if(yargs.argv.enableproxy) {
@@ -53,6 +54,11 @@ const argscheck = () => {
     config.proxy.port = yargs.argv.proxyport;
     fs.writeFileSync(path.resolve(__dirname,'config.json'), JSON.stringify(config));
     return console.log(config.proxy);
+  }
+
+  if(yargs.argv.imageproxy) {
+    config.imageProxy = yargs.argv.imageproxy || "";
+    fs.writeFileSync(path.resolve(__dirname,'config.json'), JSON.stringify(config));
   }
   
   if(typeof yargs.argv.tid == 'number') {

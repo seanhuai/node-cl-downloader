@@ -1,6 +1,6 @@
 {
   "name": "node-cl-downloader",
-  "version": "0.2.3",
+  "version": "0.3.3",
   "description": "A images download tool for t66y.com",
   "main": "index.js",
   "scripts": {
@@ -23,11 +23,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/seanhuai/node-cl-downloader"
+    "url": "git+https://github.com/seanhuai/node-cl-downloader"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
     "iconv-lite": "^0.4.24",
+    "progress": "^2.0.3",
     "request": "^2.88.0",
     "yargs": "^13.1.0"
   }
